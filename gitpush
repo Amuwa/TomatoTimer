@@ -1,0 +1,24 @@
+#!/bin/bash
+git add *.txt
+git add *.md
+git add LICENSE
+git add *.pro
+git add *.ico
+git add *.rc
+git add *.icns
+git add *.png
+
+git add gitpush
+git add *.cpp
+git add *.h
+git add *.qrc
+git add *.ui
+
+
+
+git commit -m "A Message."
+git push origin master
+
+
+
+
