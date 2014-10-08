@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>time.png</file>
+        <file>rest.png</file>
+        <file>idle.png</file>
+    </qresource>
+</RCC>
