@@ -212,7 +212,7 @@ void TomatoTimerWindow::topWindow()
 void TomatoTimerWindow::onSwitch()
 {
     this->activateWindow();
-    this->raise();
+    this->raise();    
     sec_counter=0;
 
     if(status == WORK)
@@ -249,6 +249,50 @@ void TomatoTimerWindow::onSwitch()
         ui->theButton->setText("Tomato It");
         ui->label->setPixmap(QPixmap("://idle.png"));
     }
+
+    sound();
+    shake();
 }
 
+#include <QTime>
+#include <QDesktopWidget>
+void TomatoTimerWindow::shake(){
+    int x = this->geometry().topLeft().rx();
+    int y = this->geometry().topLeft().ry();
+    int w= this->geometry().width();
+    int h = this->geometry().height();
+
+    QRect dr = QApplication::desktop()->geometry();
+    int xc= dr.width()/2-w/2;
+    int yc = dr.height()/2-h/2;
+
+
+    //this->setGeometry(xc+20,y,w,h);
+    for(int i=0;i<60;i++){
+        QTime t;
+        t.start();
+        while(t.elapsed()<40){
+            QCoreApplication::processEvents();
+        }
+
+        int d = 10;
+        if(i%4==0){
+            this->setGeometry(xc+d,yc,w,h);
+        }else if(i%4==1){
+            this->setGeometry(xc,yc+d/10,w,h);
+        }else if(i%4==2){
+            this->setGeometry(xc-d,yc,w,h);
+        }
+        else{
+            this->setGeometry(xc,yc-d/10,w,h);
+        }
+    }
+    this->setGeometry(x,y,w,h);
+}
+#include<QSound>
+
+void TomatoTimerWindow::sound(){
+    QSound bells(":/phonerng.wav");
+    bells.play();
+}
 

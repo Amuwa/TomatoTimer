@@ -31,6 +31,8 @@ public slots:
     void onActivate(QSystemTrayIcon::ActivationReason r);
     void onSwitch();
     void topWindow();
+    void shake();
+    void sound();
 
 
 private:

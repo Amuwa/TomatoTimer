@@ -16,7 +16,7 @@ git add *.ui
 
 
 
-git commit -m "A Message."
+git commit -m "Vibrate on the screen center, maybe play sound."
 git push origin master
 
 

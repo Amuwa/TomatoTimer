@@ -3,5 +3,6 @@
         <file>time.png</file>
         <file>rest.png</file>
         <file>idle.png</file>
+        <file>phonerng.wav</file>
     </qresource>
 </RCC>
