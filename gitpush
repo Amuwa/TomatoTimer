@@ -13,10 +13,11 @@ git add *.cpp
 git add *.h
 git add *.qrc
 git add *.ui
+git add *.wav
 
 
 
-git commit -m "Vibrate on the screen center, maybe play sound."
+git commit -m "Add Sound File."
 git push origin master
 
 
